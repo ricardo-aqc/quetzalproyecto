@@ -20,9 +20,9 @@
                     <div class="navbar-nav text-center">
                         <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="#">Home</a>
                         <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="#">Mision</a>
-                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="#">Nosotros</a>
+                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="Nosotros.php">Nosotros</a>
                         <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="#">Contacto</a>
-                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="#">Obras</a>
+                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="Obras.php">Obras</a>
                     </div>
 
 
