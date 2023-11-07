@@ -1,25 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/estilo.css">
+
+
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg" style="background-color: #94B27E;">
             <div class="container-fluid row row-cols-auto">
                 <a style="color:white; font-family:'Roboto'; font-size:xx-large" class="navbar-brand col-4"
                     href="#"><img src="img\Quetzal.jpg" class="logo" alt=""></a>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav text-center">
                         <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="#">Home</a>
-                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="mision.php">Mision</a>
+                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="Mision.php">Mision</a>
                         <a style="color:black; font-family:'Roboto'" class="nav-link col-4"
                             href="Nosotros.php">Nosotros</a>
                         <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="#">Contacto</a>
@@ -31,62 +32,45 @@
             </div>
         </nav>
     </header>
-
-    <main>
-        <div class="imgTitle">
-            <img src="img\NosotrosTitle.jpg" class="imgfondoT" alt=""></img>
-            <div class="centered">Nosotros</div>
+    <div class="p-5 text-center bg-image" style="
+      background-image: url('img\mision.jpg');
+      height: 300px;
+      position: relative;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    ">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white">
+                <h1 class="mb-3"><u>Mision</u></h1>
+            </div>
         </div>
-        <br>
-
-        <div class="contain">
+    </div>
+    <div class="aboutus-area">
+        <div class="container mt-5">
             <div class="row">
-                <div class="col-4 align-items-stretch">
-                    <div class="card bg-transparent border-0">
-                        <center><img src="img\Nosotros1.jpg" class="card-img-top rounded-circle cardImage" alt="...">
-                        </center>
-                        <div class="card-body">
-                            <h5 class="card-title" style="font-size:x-large"></h5>
-                            <p class="card-text" style="text-align:center; font-size:20px"> Somos una constructora con
-                                más de 30 años de experiencia y un historial de más de proyectos exitosos, somos una
-                                constructora versátil y adaptable. Hemos llevado a cabo obras industriales y proyectos
-                                residenciales con un enfoque distintivo en la calidad y la innovación</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 align-items-stretch">
-                    <div class="card bg-transparent border-0">
-                        <center><img src="img\Nosotros2.png" class="card-img-top rounded-circle cardImage" alt="...">
-                        </center>
-                        <div class="card-body">
-                            <h5 class="card-title" style="font-size:x-large"></h5>
-                            <p class="card-text" style="text-align:center; font-size:20px">Nuestra misión es dar
-                                soluciones versátiles y adaptables a clientes que requieran una obra civil. Hemos
-                                llevado a cabo obras industriales y proyectos residenciales con un enfoque distintivo en
-                                la calidad y la innovación.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 align-items-stretch">
-                    <div class="card bg-transparent border-0">
-                        <center><img src="img\Nosotros3.jpg" class="card-img-top rounded-circle cardImage" alt="...">
-                        </center>
-                        <div class="card-body">
-                            <h5 class="card-title" style="font-size:x-large"></h5>
-                            <p class="card-text" style="text-align:center; font-size:20px">Nos enorgullecemos de
+                <div class="col-xs-12">
+                    <img src="https://jezzmedia.com/wp-content/uploads/2022/10/mision-vision-y-valores-6.jpg"
+                        class="rounded float-end" style="width: 400px" alt="...">
+                    <div class="col-md-8 col-sm-6 col-xs-12">
+                        <div class="aboutus-content ">
+                            <h1>Nuestra <span>Mision</span></h1>
+                            <h4>Construyendo Futuros Brillantes, Ladrillo a Ladrillo</h4>
+                            <p>Nuestra misión es dar soluciones versátiles y adaptables a clientes que requieran una
+                                obra civil. Hemos llevado a cabo obras industriales y proyectos residenciales con un
+                                enfoque distintivo en la calidad y la innovación. También es tener la ventaja
+                                competitiva ofreciendo excelencia y precios competitivos. Nos enorgullecemos de
                                 adaptarnos a las necesidades únicas de cada cliente, garantizando resultados que superan
-                                expectativas.
-                            </p>
+                                expectativas.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <br>
-
-    </main>
-
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
     <footer>
         <center>
             <a style="color:white; font-family:'Roboto'; font-size:xx-large" class="navbar-brand col-4" href="#"><img
@@ -149,5 +133,42 @@
         </center>
     </footer>
 </body>
+
+<style>
+footer {
+    background-color: #6BA4AC;
+    position: static;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}
+
+.imagenTam {
+    margin: auto;
+    width: auto;
+    height: 600px;
+    object-fit: contain;
+
+}
+
+.logo {
+    width: auto;
+    height: 50px;
+    object-fit: contain;
+}
+
+.logofooter {
+    width: auto;
+    height: 40px;
+    object-fit: contain;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+}
+</style>
 
 </html>

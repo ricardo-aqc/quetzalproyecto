@@ -19,7 +19,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-auto col-md-2" style="background-color: #394f4c">
-                <a class="text-decoration-none mt-1 align-items-center text-white" href="#">
+                <a class="text-decoration-none mt-1 align-items-center text-white" href="Admin Dashboard.php">
                     <span class="fs-4 d-none d-sm-inline"> Admin Quetzal</span>
                 </a>
                 <nav class="nav nav-tabs flex-column mt-4" style="background-color: #6ba4ac">

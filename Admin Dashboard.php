@@ -19,7 +19,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-auto col-md-2" style="background-color: #394f4c">
-                <a class="text-decoration-none mt-1 align-items-center text-white" href="#">
+                <a class="text-decoration-none mt-1 align-items-center text-white" href="Admin Dashboard.php">
                     <span class="fs-4 d-none d-sm-inline"> Admin Quetzal</span>
                 </a>
                 <nav class="nav nav-tabs flex-column mt-4" style="background-color: #6ba4ac">
@@ -47,56 +47,60 @@
 
 
 
-                    <div class="preview row mb-3 ">
-                        <table class="table">
-                            <thead>
-                              <tr>
-                                <th>Nombre Obra</th>
-                                <th>Descripcion</th>
-                                <th>Encargado</th>
-                                <th>Ubicacion</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>Restauracion SOSA</td>
-                                <td>Restauracion en la avenida Sosa </td>
-                                <td>Ricardo Juarez</td>
-                                <td>Av. Sosa  1503 Calle Simon</td>
-                                <th> <i class="bi bi-pencil" style="font-size: 1em; color: #181717"></i><i class="bi bi-trash"></i></th>
-                              </tr>
-                              <tr>
-                                <td>Miguel Aleman</td>
-                                <td>Construccion en la calle Miguel Aleman</td>
-                                <td>Christian Fernandez</td>
-                                <td>Av. Miguel Aleman, Juarez</td>
-                                <th> <i class="bi bi-pencil" style="font-size: 1em; color: #181717"></i> <i class="bi bi-trash"></i></th>
-                              </tr>
+                        <div class="preview row mb-3 ">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre Obra</th>
+                                        <th>Descripcion</th>
+                                        <th>Encargado</th>
+                                        <th>Ubicacion</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Restauracion SOSA</td>
+                                        <td>Restauracion en la avenida Sosa </td>
+                                        <td>Ricardo Juarez</td>
+                                        <td>Av. Sosa 1503 Calle Simon</td>
+                                        <th> <i class="bi bi-pencil" style="font-size: 1em; color: #181717"></i><i
+                                                class="bi bi-trash"></i></th>
+                                    </tr>
+                                    <tr>
+                                        <td>Miguel Aleman</td>
+                                        <td>Construccion en la calle Miguel Aleman</td>
+                                        <td>Christian Fernandez</td>
+                                        <td>Av. Miguel Aleman, Juarez</td>
+                                        <th> <i class="bi bi-pencil" style="font-size: 1em; color: #181717"></i> <i
+                                                class="bi bi-trash"></i></th>
+                                    </tr>
 
-                              <tr>
-                                <td>Remodelacion Casa Chavez</td>
-                                <td>Remodelacion en con distrito de los Chavez</td>
-                                <td>Jordi Vazconcelos</td>
-                                <td>Chavez Chavez, 1289. Av. Chavez</td>
-                                <th> <i class="bi bi-pencil" style="font-size: 1em; color: #181717"></i><i class="bi bi-trash"></i></th>
-                              </tr>
+                                    <tr>
+                                        <td>Remodelacion Casa Chavez</td>
+                                        <td>Remodelacion en con distrito de los Chavez</td>
+                                        <td>Jordi Vazconcelos</td>
+                                        <td>Chavez Chavez, 1289. Av. Chavez</td>
+                                        <th> <i class="bi bi-pencil" style="font-size: 1em; color: #181717"></i><i
+                                                class="bi bi-trash"></i></th>
+                                    </tr>
 
-                              <tr>
-                                <td>Construccion Calderon</td>
-                                <td>Construccion en la calle de Felipe Calderon</td>
-                                <td>Juan Pablo Dominguez</td>
-                                <td>Av. Chavez, Felipe Calderon</td>
-                                <th> <i class="bi bi-pencil" style="font-size: 1em; color: #181717"></i><i class="bi bi-trash"></i></th> 
-                              </tr>
+                                    <tr>
+                                        <td>Construccion Calderon</td>
+                                        <td>Construccion en la calle de Felipe Calderon</td>
+                                        <td>Juan Pablo Dominguez</td>
+                                        <td>Av. Chavez, Felipe Calderon</td>
+                                        <th> <i class="bi bi-pencil" style="font-size: 1em; color: #181717"></i><i
+                                                class="bi bi-trash"></i></th>
+                                    </tr>
 
-                            </tr>
-                            <tr>
+                                    </tr>
+                                    <tr>
 
-                            </tbody>
-                          </table>
-                    
+                                </tbody>
+                            </table>
 
-                    </div>
+
+                        </div>
                 </form>
             </div>
         </div>
