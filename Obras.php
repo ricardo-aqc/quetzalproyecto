@@ -33,7 +33,7 @@
 
     <main>
         <div class="imgTitle">
-            <img src="ObraTitle.jpg" class="imgfondoT" alt=""></img>
+            <img src="img/ObraTitle.jpg" class="imgfondoT" alt=""></img>
             <div class="centered">Obras</div>
         </div>
         <br>
