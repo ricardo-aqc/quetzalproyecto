@@ -33,7 +33,7 @@
         </nav>
     </header>
     <div class="p-5 text-center bg-image" style="
-      background-image: url('img\mision.jpg');
+      background-image: url('img/mision.jpg');
       height: 300px;
       position: relative;
       background-position: center;
@@ -47,7 +47,7 @@
         </div>
     </div>
     <div class="aboutus-area">
-        <div class="container mt-5">
+        <div class="container mt-5 mb-5">
             <div class="row">
                 <div class="col-xs-12">
                     <img src="https://jezzmedia.com/wp-content/uploads/2022/10/mision-vision-y-valores-6.jpg"
