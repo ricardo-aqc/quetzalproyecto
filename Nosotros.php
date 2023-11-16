@@ -18,11 +18,10 @@
                     href="#"><img src="img\Quetzal.jpg" class="logo" alt=""></a>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav text-center">
-                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="#">Home</a>
+                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="landingPage.php">Home</a>
                         <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="mision.php">Mision</a>
-                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4"
-                            href="Nosotros.php">Nosotros</a>
-                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="#">Contacto</a>
+                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="Nosotros.php">Nosotros</a>
+                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="Contactanos.php">Contacto</a>
                         <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="Obras.php">Obras</a>
                     </div>
 
