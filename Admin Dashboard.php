@@ -1,3 +1,20 @@
+<?php
+    $usuario = "root";
+    $password = "";
+    $servidor = "127.0.0.1";
+    $basededatos = "constructora";
+
+    $conexion = mysqli_connect($servidor, $usuario, "") or die ("No se a podido conectar al servidor de la base de datos");
+	
+    $db = mysqli_select_db($conexion, $basededatos) or die ("Ups! Parece ser que no se a podido conectar a la base de datos");
+
+    $consulta = "SELECT * FROM obra";
+	$resultado = mysqli_query($conexion, $consulta)
+?>
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,44 +75,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php
+                                    while ($columna = mysqli_fetch_array($resultado)) {
+                                    ?>
                                     <tr>
-                                        <td>Restauracion SOSA</td>
-                                        <td>Restauracion en la avenida Sosa </td>
-                                        <td>Ricardo Juarez</td>
-                                        <td>Av. Sosa 1503 Calle Simon</td>
+                                        <td><?php echo $columna ['nombre']; ?></td>
+                                        <td><?php echo $columna ['descripcion']; ?></td>
+                                        <td><?php echo $columna ['encargado']; ?></td>
+                                        <td><?php echo $columna ['url_ubicacion']; ?></td>
                                         <th> <i class="bi bi-pencil" style="font-size: 1em; color: #181717"></i><i
                                                 class="bi bi-trash"></i></th>
                                     </tr>
-                                    <tr>
-                                        <td>Miguel Aleman</td>
-                                        <td>Construccion en la calle Miguel Aleman</td>
-                                        <td>Christian Fernandez</td>
-                                        <td>Av. Miguel Aleman, Juarez</td>
-                                        <th> <i class="bi bi-pencil" style="font-size: 1em; color: #181717"></i> <i
-                                                class="bi bi-trash"></i></th>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Remodelacion Casa Chavez</td>
-                                        <td>Remodelacion en con distrito de los Chavez</td>
-                                        <td>Jordi Vazconcelos</td>
-                                        <td>Chavez Chavez, 1289. Av. Chavez</td>
-                                        <th> <i class="bi bi-pencil" style="font-size: 1em; color: #181717"></i><i
-                                                class="bi bi-trash"></i></th>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Construccion Calderon</td>
-                                        <td>Construccion en la calle de Felipe Calderon</td>
-                                        <td>Juan Pablo Dominguez</td>
-                                        <td>Av. Chavez, Felipe Calderon</td>
-                                        <th> <i class="bi bi-pencil" style="font-size: 1em; color: #181717"></i><i
-                                                class="bi bi-trash"></i></th>
-                                    </tr>
-
-                                    </tr>
-                                    <tr>
-
+                                    <?php } ?>
                                 </tbody>
                             </table>
 
