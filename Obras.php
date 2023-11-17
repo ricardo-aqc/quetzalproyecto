@@ -1,3 +1,6 @@
+<?php
+require_once('config.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,10 +21,13 @@
                     href="#"><img src="img\Quetzal.jpg" class="logo" alt=""></a>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav text-center">
-                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="landingPage.php">Home</a>
+                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4"
+                            href="landingPage.php">Home</a>
                         <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="mision.php">Mision</a>
-                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="Nosotros.php">Nosotros</a>
-                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="Contactanos.php">Contacto</a>
+                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4"
+                            href="Nosotros.php">Nosotros</a>
+                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4"
+                            href="Contactanos.php">Contacto</a>
                         <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="Obras.php">Obras</a>
                     </div>
                 </div>
@@ -40,7 +46,16 @@
             <div class="row">
                 <div class="col-4 align-items-stretch">
                     <div class="card">
-                        <img src="img\Obra1.jpg" class="card-img-top" alt="...">
+                        <?php
+                        $id = 1;
+                        $sql = "SELECT * FROM obra_imagen INNER JOIN  imagen ON obra_imagen.imagen_id=imagen.imagen_id WHERE imagen.imagen_id=?";
+                        $stmt = $conexion->prepare($sql);
+                        $stmt->bind_param('s', $id);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                        $row = $result->fetch_array();
+                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['imagen']) . '" class="card-img-top" />';
+                        ?>
                         <div class="card-body">
                             <h5 class="card-title" style="font-size:x-large"></h5>
                             <p class="card-text" style="text-decoration:underline"></p>
