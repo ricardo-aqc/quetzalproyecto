@@ -41,28 +41,51 @@ require_once('config.php');
             <div class="centered">Obras</div>
         </div>
         <br>
-
+        
         <div class="contain">
             <div class="row">
-                <div class="col-4 align-items-stretch">
+                <?php
+                for($id=1; $id<=2; $id++) {
+                    $sql = "SELECT * FROM obra_imagen INNER JOIN imagen ON obra_imagen.imagen_id=imagen.imagen_id WHERE imagen.imagen_id=?";
+                    $stmt = $conexion->prepare($sql);
+                    $stmt->bind_param('s', $id);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    while ($row = $result->fetch_array()){
+                    ?>
+                        <div class="col-4 align-items-stretch">
+                            <div class="card">
+                                <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($row['imagen']) . '" class="card-img-top" />'; ?>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-size:x-large"></h5>
+                                <p class="card-text" style="text-decoration:underline"></p>
+                            </div>
+                        </div>
+                    <?php
+                    }
+                }
+                ?>
+                <!-- <div class="col-4 align-items-stretch">
                     <div class="card">
                         <?php
-                        $id = 1;
-                        $sql = "SELECT * FROM obra_imagen INNER JOIN  imagen ON obra_imagen.imagen_id=imagen.imagen_id WHERE imagen.imagen_id=?";
-                        $stmt = $conexion->prepare($sql);
-                        $stmt->bind_param('s', $id);
-                        $stmt->execute();
-                        $result = $stmt->get_result();
-                        $row = $result->fetch_array();
-                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['imagen']) . '" class="card-img-top" />';
+                        /*for($id=1; $id<=2; $id++) {
+                            $sql = "SELECT * FROM obra_imagen INNER JOIN imagen ON obra_imagen.imagen_id=imagen.imagen_id WHERE imagen.imagen_id=?";
+                            $stmt = $conexion->prepare($sql);
+                            $stmt->bind_param('s', $id);
+                            $stmt->execute();
+                            $result = $stmt->get_result();
+                            $row = $result->fetch_array();
+                            echo '<img src="data:image/jpeg;base64,' . base64_encode($row['imagen']) . '" class="card-img-top" />';
+                        }*/
                         ?>
                         <div class="card-body">
                             <h5 class="card-title" style="font-size:x-large"></h5>
                             <p class="card-text" style="text-decoration:underline"></p>
                         </div>
                     </div>
-                </div>
-                <div class="col-4 align-items-stretch">
+                </div> !-->
+                <!-- <div class="col-4 align-items-stretch">
                     <div class="card">
                         <img src="img\Obra2.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -79,7 +102,7 @@ require_once('config.php');
                             <p class="card-text" style="text-decoration:underline"></p>
                         </div>
                     </div>
-                </div>
+                </div> !-->        
             </div>
 
             <br>

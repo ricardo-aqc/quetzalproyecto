@@ -83,7 +83,8 @@ CREATE TABLE `obra_imagen` (
 --
 
 INSERT INTO `obra_imagen` (`obra_imagen_id`, `obra_id`, `imagen_id`) VALUES
-(1, 1, 1);
+(1, 1, 1),
+(2, 2, 2);
 
 -- --------------------------------------------------------
 
