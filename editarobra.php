@@ -99,7 +99,7 @@ $row = $result->fetch_array();
                         <div name="imageInput">
                             <?php
                                 $db = new mysqli("localhost", "root", "", "constructora");
-                                $sql = "SELECT imagen FROM obra_imagen INNER JOIN imagen ON obra_imagen.imagen_id=imagen.imagen_id WHERE  imagen.imagen_id = 1";
+                                $sql = "SELECT imagen FROM obra_imagen INNER JOIN imagen ON obra_imagen.imagen_id=imagen.imagen_id WHERE  imagen.imagen_id = ?";
                                 $stmt = $db->prepare($sql);
                                 $stmt->bind_param('s', $id);
                                 $stmt->execute();
