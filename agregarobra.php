@@ -76,7 +76,7 @@
 
                         <div class="text-center">
                             <input type="text" name="ubicacionObra" class="form-control" id="lastNameInput" placeholder="" required
-                                pattern="[a-zA-Z]+" />
+                                pattern="[a-zA-Z ]+" />
                         </div>
                     </div>
                     <div class="row mb-3">

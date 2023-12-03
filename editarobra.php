@@ -50,7 +50,7 @@ $row = $result->fetch_array();
             </div>
 
             <div class="col-auto col-md-10 ms-auto min-vh-100">
-                <form name="form1" action="#" class="row align-items-center mt-1 ms-1 me-1" action="UpdateObra.php">
+                <form name="form1" method="GET" class="row align-items-center mt-1 ms-1 me-1" action="UpdateObra.php">
                     <div class="mb-3 text-center">
                         <h4>
                             Editar
@@ -64,17 +64,23 @@ $row = $result->fetch_array();
                         <div class="text-center">
                             <input type="text" class="form-control" id="nameInput" name="nameInput" placeholder=""
                                 required
-                                <?php
-                                                                                                                            echo 'value="' . ($row["nombre"]) . '"'
-                                                                                                                            ?>
-                                pattern="[a-zA-Z ][0-9]+" />
+                                <?php //echo 'value="' . ($row["nombre"]) . '"'?>
+                                pattern="[a-zA-Z ]+[0-9]+" />
                         </div>
                     </div>
                     <div class="row">
                         <label for="descriptionInput" class="form-label">Descripción del Proyecto</label>
                         <div class="text-center">
-                            <textarea class="form-control" id="descriptionInput" name="descriptionInput" rows="6"><?php echo($row["descripcion"])?>
+                            <textarea class="form-control" id="descriptionInput" name="descriptionInput" rows="6"><?php //echo($row["descripcion"])?>
                             </textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="nameInput" class="form-label">Encargado del Proyecto
+                        </label>
+                        <div class="text-center">
+                            <input type="text" name="encargadoObra" class="form-control" id="nameInput" required
+                                pattern="[a-zA-Z ]+" />
                         </div>
                     </div>
                     <div class="row">
