@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 21, 2023 at 02:33 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 03-12-2023 a las 22:23:38
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `constructora`
+-- Base de datos: `constructora`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `imagen`
+-- Estructura de tabla para la tabla `imagen`
 --
 
 CREATE TABLE `imagen` (
@@ -33,7 +33,7 @@ CREATE TABLE `imagen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `imagen`
+-- Volcado de datos para la tabla `imagen`
 --
 
 INSERT INTO `imagen` (`imagen_id`, `imagen`) VALUES
@@ -44,7 +44,7 @@ INSERT INTO `imagen` (`imagen_id`, `imagen`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `obra`
+-- Estructura de tabla para la tabla `obra`
 --
 
 CREATE TABLE `obra` (
@@ -56,11 +56,11 @@ CREATE TABLE `obra` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `obra`
+-- Volcado de datos para la tabla `obra`
 --
 
 INSERT INTO `obra` (`obra_id`, `descripcion`, `url_ubicacion`, `encargado`, `nombre`) VALUES
-(1, 'Descripcion de Obra 1', 'link de obra 1', 'encargado de obra 1', 'Nombre de Obra prueba'),
+(1, 'Descripcion de Obra 1', 'link de obra 1', 'encargado de obra 1', 'Nombre de Obra 1'),
 (2, 'Descripcion de Obra 2', 'link de obra 2', 'encargado de obra 2', 'Nombre de Obra 2'),
 (3, 'Descripcion de Obra 3', 'link de obra 3', 'encargado de obra 3', 'Nombre de Obra 3'),
 (4, 'Descripcion de Obra 4', 'link de obra 4', 'encargado de obra 4', 'Nombre de Obra 4'),
@@ -69,7 +69,7 @@ INSERT INTO `obra` (`obra_id`, `descripcion`, `url_ubicacion`, `encargado`, `nom
 -- --------------------------------------------------------
 
 --
--- Table structure for table `obra_imagen`
+-- Estructura de tabla para la tabla `obra_imagen`
 --
 
 CREATE TABLE `obra_imagen` (
@@ -79,7 +79,7 @@ CREATE TABLE `obra_imagen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `obra_imagen`
+-- Volcado de datos para la tabla `obra_imagen`
 --
 
 INSERT INTO `obra_imagen` (`obra_imagen_id`, `obra_id`, `imagen_id`) VALUES
@@ -89,7 +89,7 @@ INSERT INTO `obra_imagen` (`obra_imagen_id`, `obra_id`, `imagen_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estructura de tabla para la tabla `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -100,23 +100,23 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `imagen`
+-- Indices de la tabla `imagen`
 --
 ALTER TABLE `imagen`
   ADD PRIMARY KEY (`imagen_id`);
 
 --
--- Indexes for table `obra`
+-- Indices de la tabla `obra`
 --
 ALTER TABLE `obra`
   ADD PRIMARY KEY (`obra_id`);
 
 --
--- Indexes for table `obra_imagen`
+-- Indices de la tabla `obra_imagen`
 --
 ALTER TABLE `obra_imagen`
   ADD PRIMARY KEY (`obra_imagen_id`),
@@ -124,21 +124,42 @@ ALTER TABLE `obra_imagen`
   ADD KEY `obra_id` (`obra_id`) USING BTREE;
 
 --
--- Indexes for table `usuario`
+-- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`usuario`);
 
 --
--- Constraints for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- Constraints for table `obra_imagen`
+-- AUTO_INCREMENT de la tabla `imagen`
+--
+ALTER TABLE `imagen`
+  MODIFY `imagen_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `obra`
+--
+ALTER TABLE `obra`
+  MODIFY `obra_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `obra_imagen`
 --
 ALTER TABLE `obra_imagen`
-  ADD CONSTRAINT `obra_imagen_ibfk_1` FOREIGN KEY (`obra_id`) REFERENCES `obra` (`obra_id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `obra_imagen_ibfk_2` FOREIGN KEY (`imagen_id`) REFERENCES `imagen` (`imagen_id`) ON UPDATE CASCADE;
+  MODIFY `obra_imagen_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `obra_imagen`
+--
+ALTER TABLE `obra_imagen`
+  ADD CONSTRAINT `obra_imagen_ibfk_2` FOREIGN KEY (`imagen_id`) REFERENCES `imagen` (`imagen_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
