@@ -1,6 +1,3 @@
-<?php
-require_once('config.php');
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,13 +18,10 @@ require_once('config.php');
                     href="#"><img src="img\Quetzal.jpg" class="logo" alt=""></a>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav text-center">
-                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4"
-                            href="landingPage.php">Home</a>
+                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="landingPage.php">Home</a>
                         <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="mision.php">Mision</a>
-                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4"
-                            href="Nosotros.php">Nosotros</a>
-                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4"
-                            href="Contactanos.php">Contacto</a>
+                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="Nosotros.php">Nosotros</a>
+                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="Contactanos.php">Contacto</a>
                         <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="Obras.php">Obras</a>
                     </div>
                 </div>
@@ -36,102 +30,90 @@ require_once('config.php');
     </header>
 
     <main>
-        <div class="imgTitle">
-            <img src="img/ObraTitle.jpg" class="imgfondoT" alt=""></img>
-            <div class="centered">Obras</div>
+        <div class="contain col-2" style="padding:1%">
+                <a href="Obras.php"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
+                    <path d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"/></svg>                </a>
+                <a href="Obras.php" style="font-size:28px">Volver</a>
         </div>
+            
+        <center>
+            <div>
+                <h1 class="h1" style="text-decoration:underline; color:black; font-family:'Roboto'">Bodega Vinum</h1>
+            </div>
+        </center>
+        <div class="contain">
+            <center>
+                <div class="col-7 align-items-stretch border-0" style="padding: 1%;">
+                    <div class="card" style="max-width: auto; ">
+                        <div class="row g-0">
+                            <div class="col">
+                                <img src="img\bodegasinfo.jpg" class="cardImage" alt="">
+                            </div>
+                            <div class="col">
+                                <div class="card-body">
+                                    <center>
+                                        <p>
+                                            Excelente ubicación en el corredor comercial Carretera al Tejar ideal para punto de venta comercial. 
+                                        </p>
+                                        <p>
+                                            Carretera Monterrey Tejar Km. 1.5, Colonia Granjas Boticária, Monterrey NL
+                                        </p>
+                                        <p>
+                                            Cuenta con un rápido acceso a la carretera de Cuota Monterrey – Saltillo.
+                                        </p>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </center>
+            
+        </div>
+
         <br>
+
+        <center>
+            <h2 class="h2" style="color:black; font-family:'Roboto'">Otras Obras</h2>
+        </center>
         
+
         <div class="contain">
             <div class="row">
-                <?php
-                for($id=1; $id<=2; $id++) {
-                    $sql = "SELECT * FROM obra_imagen INNER JOIN imagen ON obra_imagen.imagen_id=imagen.imagen_id WHERE imagen.imagen_id=?";
-                    $stmt = $conexion->prepare($sql);
-                    $stmt->bind_param('s', $id);
-                    $stmt->execute();
-                    $result = $stmt->get_result();
-                    while ($row = $result->fetch_array()){
-                    ?>
-                        <div class="col-4 align-items-stretch">
-                            <div class="card">
-                                <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($row['imagen']) . '" class="card-img-top" />'; ?>
+                <div class="col-6 align-items-stretch" style="padding: 1%">
+                    <div class="card" style="max-width: auto; ">
+                        <div class="row g-0">
+                            <div class="col-5">
+                                <img src="img\casas.png" class="img-fluid rounded-start" alt="...">
                             </div>
-                            <div class="card-body">
-                                <h5 class="card-title" style="font-size:x-large"></h5>
-                                <p class="card-text" style="text-decoration:underline"></p>
+                            <div class="col-7">
+                                <div class="card-body">
+                                    <center>
+                                        <h5 class="card-title">Casas</h5>
+                                        <p class="card-text"> Construimos casas para tu mejor comodidad</p>
+                                        <p class="card-text"><button type="button" class="btn btn-primary">Mas informacion</button></p>
+                                    </center>
+                                </div>
                             </div>
                         </div>
-                    <?php
-                    }
-                }
-                ?>
-                <!-- <div class="col-4 align-items-stretch">
-                    <div class="card">
-                        <?php
-                        /*for($id=1; $id<=2; $id++) {
-                            $sql = "SELECT * FROM obra_imagen INNER JOIN imagen ON obra_imagen.imagen_id=imagen.imagen_id WHERE imagen.imagen_id=?";
-                            $stmt = $conexion->prepare($sql);
-                            $stmt->bind_param('s', $id);
-                            $stmt->execute();
-                            $result = $stmt->get_result();
-                            $row = $result->fetch_array();
-                            echo '<img src="data:image/jpeg;base64,' . base64_encode($row['imagen']) . '" class="card-img-top" />';
-                        }*/
-                        ?>
-                        <div class="card-body">
-                            <h5 class="card-title" style="font-size:x-large"></h5>
-                            <p class="card-text" style="text-decoration:underline"></p>
-                        </div>
-                    </div>
-                </div> !-->
-                <!-- <div class="col-4 align-items-stretch">
-                    <div class="card">
-                        <img src="img\Obra2.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" style="font-size:x-large"></h5>
-                            <p class="card-text" style="text-decoration:underline"></p>
-                        </div>
                     </div>
                 </div>
-                <div class="col-4 align-items-stretch">
-                    <div class="card">
-                        <img src="img\Obra3.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" style="font-size:x-large"></h5>
-                            <p class="card-text" style="text-decoration:underline"></p>
-                        </div>
-                    </div>
-                </div> !-->        
-            </div>
-
-            <br>
-
-            <div class="row">
-                <div class="col-4 align-items-stretch">
-                    <div class="card">
-                        <img src="img\Obra4.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" style="font-size:x-large"></h5>
-                            <p class="card-text" style="text-decoration:underline"></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 align-items-stretch">
-                    <div class="card">
-                        <img src="img\Obra5.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" style="font-size:x-large"></h5>
-                            <p class="card-text" style="text-decoration:underline"></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 align-items-stretch">
-                    <div class="card">
-                        <img src="img\Obra6.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" style="font-size:x-large"></h5>
-                            <p class="card-text" style="text-decoration:underline"></p>
+            
+                <div class="col-6 align-items-stretch" style="padding: 1%">
+                    <div class="card" style="max-width: auto;">
+                        <div class="row g-0">
+                            <div class="col-5">
+                                <img src="img\remodelaciones.png" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-7">
+                                <div class="card-body">
+                                    <center>
+                                        <h5 class="card-title">Remodelaciones</h5>
+                                        <p class="card-text"> Hacemos remodelaciones en el momento que lo necesite</p>
+                                        <p class="card-text"><button type="button" class="btn btn-primary">Mas informacion</button></p>
+                                    </center>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -139,7 +121,6 @@ require_once('config.php');
 
         </div>
 
-        <br>
 
     </main>
 
@@ -205,5 +186,4 @@ require_once('config.php');
         </center>
     </footer>
 </body>
-
 </html>

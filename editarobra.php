@@ -67,6 +67,13 @@ $row = $result->fetch_array();
                         </div>
                     </div>
                     <div class="row">
+                        <label for="encargadoObra" class="form-label">Encargado del Proyecto
+                        </label>
+                        <div class="text-center">
+                            <input type="text" name="encargadoObra" class="form-control" id="encargadoObra" required pattern="[a-zA-Z ]+" />
+                        </div>
+                    </div>
+                    <div class="row">
                         <label for="locationInput" class="form-label">Ubicación</label>
                         <div class="text-center">
                             <input type="text" class="form-control" id="locationInput" placeholder="" required name="locationInput" pattern="[a-zA-Z ]+" <?php echo 'value="' . ($row["url_ubicacion"]) . '"' ?> />
@@ -85,8 +92,9 @@ $row = $result->fetch_array();
                         <div name="imageInput">
                             <?php
                             $db = new mysqli("localhost", "root", "", "constructora");
-                            $sql = "SELECT imagen FROM obra_imagen INNER JOIN imagen ON obra_imagen.imagen_id=imagen.imagen_id WHERE  imagen.imagen_id = 1";
+                            $sql = "SELECT imagen FROM obra_imagen INNER JOIN imagen ON obra_imagen.imagen_id=imagen.imagen_id WHERE  imagen.imagen_id = ?";
                             $stmt = $db->prepare($sql);
+                            $stmt->bind_param('s', $id);
                             $stmt->execute();
                             $result = $stmt->get_result();
                             $row = $result->fetch_array();

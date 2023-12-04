@@ -41,7 +41,7 @@
             </div>
 
             <div class="col-auto col-md-10 ms-auto min-vh-100">
-                <form name="form1" action="#" class="row align-items-center mt-1 ms-1 me-1">
+                <form name="form1" method="GET" class="row align-items-center mt-1 ms-1 me-1" action="CreateObra.php">
                     <div class="mb-3 text-center">
                         <h4>
                             Agregar
@@ -53,22 +53,30 @@
                         <label for="nameInput" class="form-label">Nombre del Proyecto
                         </label>
                         <div class="text-center">
-                            <input type="text" class="form-control" id="nameInput" placeholder="Monterrey" required
+                            <input type="text" name="nombreObra" class="form-control" id="nameInput" placeholder="Monterrey" required
                                 pattern="[a-zA-Z ]+" />
                         </div>
                     </div>
                     <div class="row">
                         <label for="nameInput" class="form-label">Descripción del Proyecto</label>
                         <div class="text-center">
-                            <textarea class="form-control" id="nameInput" rows="6"></textarea>
+                            <textarea class="form-control" name="descObra" id="nameInput" rows="6"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="nameInput" class="form-label">Encargado del Proyecto
+                        </label>
+                        <div class="text-center">
+                            <input type="text" name="encargadoObra" class="form-control" id="nameInput" required
+                                pattern="[a-zA-Z ]+" />
                         </div>
                     </div>
                     <div class="row">
                         <label for="lastNameInput" class="form-label">Ubicación</label>
 
                         <div class="text-center">
-                            <input type="text" class="form-control" id="lastNameInput" placeholder="" required
-                                pattern="[a-zA-Z]+" />
+                            <input type="text" name="ubicacionObra" class="form-control" id="lastNameInput" placeholder="" required
+                                pattern="[a-zA-Z ]+" />
                         </div>
                     </div>
                     <div class="row mb-3">
