@@ -41,7 +41,7 @@ require_once('config.php');
             <div class="centered">Obras</div>
         </div>
         <br>
-        
+
         <div class="contain">
             <div class="row">
                 <?php
@@ -53,16 +53,16 @@ require_once('config.php');
                     $result = $stmt->get_result();
                     while ($row = $result->fetch_array()){
                     ?>
-                        <div class="col-4 align-items-stretch">
-                            <div class="card">
-                                <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($row['imagen']) . '" class="card-img-top" />'; ?>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title" style="font-size:x-large"></h5>
-                                <p class="card-text" style="text-decoration:underline"></p>
-                            </div>
-                        </div>
-                    <?php
+                <div class="col-4 align-items-stretch">
+                    <div class="card">
+                        <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($row['imagen']) . '" class="card-img-top" />'; ?>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-size:x-large"></h5>
+                        <p class="card-text" style="text-decoration:underline"></p>
+                    </div>
+                </div>
+                <?php
                     }
                 }
                 ?>
@@ -102,7 +102,7 @@ require_once('config.php');
                             <p class="card-text" style="text-decoration:underline"></p>
                         </div>
                     </div>
-                </div> !-->        
+                </div> !-->
             </div>
 
             <br>
