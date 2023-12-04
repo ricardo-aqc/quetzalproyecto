@@ -63,9 +63,9 @@ $resultado = mysqli_query($conexion, $consulta)
                                 <thead>
                                     <tr>
                                         <th>Nombre Obra</th>
-                                        <th>Descripcion</th>
+                                        <th>Descripción</th>
                                         <th>Encargado</th>
-                                        <th>Ubicacion</th>
+                                        <th>Ubicación</th>
                                         <th> Acciones </th>
                                     </tr>
                                 </thead>

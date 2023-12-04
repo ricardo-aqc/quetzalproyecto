@@ -1,11 +1,13 @@
 <?php
 require_once("config.php");
-$id = 1;
-$sql = "SELECT * FROM obra WHERE obra_id=1";
+$nombre = htmlspecialchars($_GET["name"]);
+$sql = "SELECT * FROM obra WHERE nombre='$nombre'";
 $stmt = $conexion->prepare($sql);
 $stmt->execute();
 $result = $stmt->get_result();
 $row = $result->fetch_array();
+$id = $row["obra_id"];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,12 +26,12 @@ $row = $result->fetch_array();
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid row row-cols-auto">
                 <a style="color:white; font-family:'Roboto'; font-size:xx-large" class="navbar-brand col-4"
-                    href="#"><img src="img\Quetzal.jpg" class="logo" alt=""></a>
+                    href="landingPage.php"><img src="img\Quetzal.jpg" class="logo" alt=""></a>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav text-center">
                         <a style="color:black; font-family:'Roboto'" class="nav-link col-4"
                             href="landingPage.php">Home</a>
-                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="mision.php">Mision</a>
+                        <a style="color:black; font-family:'Roboto'" class="nav-link col-4" href="mision.php">Misión</a>
                         <a style="color:black; font-family:'Roboto'" class="nav-link col-4"
                             href="Nosotros.php">Nosotros</a>
                         <a style="color:black; font-family:'Roboto'" class="nav-link col-4"
@@ -64,29 +66,44 @@ $row = $result->fetch_array();
                         <div class="row g-0">
                             <div class="col">
                                 <?php
-                                    $id=2;
-                                    $sql = "SELECT * FROM obra_imagen INNER JOIN imagen ON obra_imagen.imagen_id=imagen.imagen_id WHERE imagen.imagen_id=?";
-                                    $stmt = $conexion->prepare($sql);
-                                    $stmt->bind_param('s', $id);
-                                    $stmt->execute();
-                                    $result = $stmt->get_result();
-                                    while ($rows = $result->fetch_array()){
-                                        echo '<img src="data:image/jpeg;base64,' . base64_encode($rows['imagen']) . '" class="cardImage" />'; 
-                                    }
+
+                                $sql2 = "SELECT * FROM obra_imagen INNER JOIN imagen ON obra_imagen.imagen_id=imagen.imagen_id WHERE obra_imagen.obra_id=$id";
+                                $stmt = $conexion->prepare($sql2);
+                                $stmt->execute();
+                                $result = $stmt->get_result();
+                                $row2 = $result->fetch_array();
+
                                 ?>
                             </div>
-                            <div class="col">
-                                <div class="card-body">
-                                    <center>
-                                        <p>
-                                            <?php $desc = nl2br($row["descripcion"]); echo $desc?>
-                                        </p>
-                                    </center>
+                            <div id="carouselExample" class="carousel slide">
+                                <div class="carousel-inner">
+                                    <?php  ?>
+                                    <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($row2['imagen']) . '" class="cardImage " />'; ?>
+                                    <?php  ?>
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselExample" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselExample" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                                <div class="col">
+                                    <div class="card-body">
+                                        <center>
+                                            <p>
+                                                <?php $desc = nl2br($row["descripcion"]);
+                                                echo $desc ?>
+                                            </p>
+                                        </center>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
             </center>
 
         </div>
@@ -113,7 +130,7 @@ $row = $result->fetch_array();
                                         <p class="card-text"> Construimos casas para tu mejor comodidad</p>
                                         <a href="Obras.php">
                                             <p class="card-text"><button type="button" class="btn btn-primary">Mas
-                                                informacion</button></p>
+                                                    informacion</button></p>
                                         </a>
                                     </center>
                                 </div>
@@ -135,7 +152,7 @@ $row = $result->fetch_array();
                                         <p class="card-text"> Hacemos remodelaciones en el momento que lo necesite</p>
                                         <a href="Obras.php">
                                             <p class="card-text"><button type="button" class="btn btn-primary">Mas
-                                                informacion</button></p>
+                                                    informacion</button></p>
                                         </a>
                                     </center>
                                 </div>
@@ -158,7 +175,7 @@ $row = $result->fetch_array();
             <br>
             <h5 class="h5" style="color: black;">Copyright © 2023 HubSpot, Inc</h5>
             <a href="https://terminosycondicionesdeusoejemplo.com/">
-                <h5 class="h5" style="color: black;">Terminos y Condiciones</h5>
+                <h5 class="h5" style="color: black;">Términos y Condiciones</h5>
             </a>
             <br>
             <a href="https://www.facebook.com">
