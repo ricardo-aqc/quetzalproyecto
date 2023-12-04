@@ -64,7 +64,7 @@ $row = $result->fetch_array();
                         <div class="row g-0">
                             <div class="col">
                                 <?php
-                                    $id=1;
+                                    $id=2;
                                     $sql = "SELECT * FROM obra_imagen INNER JOIN imagen ON obra_imagen.imagen_id=imagen.imagen_id WHERE imagen.imagen_id=?";
                                     $stmt = $conexion->prepare($sql);
                                     $stmt->bind_param('s', $id);
