@@ -14,5 +14,5 @@ if ($conexion->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conexion->error;
 }
 
-$conexioexion->close();
+$conexion->close();
 // Esperar 5 segundos antes de redirigir
