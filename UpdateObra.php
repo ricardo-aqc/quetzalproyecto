@@ -14,5 +14,7 @@ if ($conexion->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conexion->error;
 }
 
+
 $conexion->close();
 // Esperar 5 segundos antes de redirigir
+header("Location: admin dashboard.php");

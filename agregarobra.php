@@ -23,7 +23,7 @@
                     <a class="nav-link text-white" href="#" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false">Obras
                     </a>
                     <div class="collapse" id="navbarTogglerDemo02">
-                        <a class="nav-link text-white" href="editarobra.php">
+                        <a class="nav-link text-white" href="admin dashboard.php">
                             <i class="bi bi-pencil" style="font-size: 1em; color: #ffffff"></i><span class="d-none d-sm-inline text-white ms-2">Editar Obra</span>
                         </a>
                         <a class="nav-link text-white" href="agregarobra.php" id="">
@@ -35,7 +35,7 @@
             </div>
 
             <div class="col-auto col-md-10 ms-auto min-vh-100">
-                <form name="form1" method="GET" class="row align-items-center mt-1 ms-1 me-1" action="CreateObra.php">
+                <form name="form1" method="POST" class="row align-items-center mt-1 ms-1 me-1" action="CreateObra.php" enctype="multipart/form-data">
                     <div class="mb-3 text-center">
                         <h4>
                             Agregar
@@ -57,10 +57,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <label for="nameInput" class="form-label">Encargado del Proyecto
+                        <label for="encargadoObra" class="form-label">Encargado del Proyecto
                         </label>
                         <div class="text-center">
-                            <input type="text" name="encargadoObra" class="form-control" id="nameInput" required pattern="[a-zA-Z ]+" />
+                            <input type="text" name="encargadoObra" class="form-control" id="encargadoObra" required pattern="[a-zA-Z ]+" />
                         </div>
                     </div>
                     <div class="row">
