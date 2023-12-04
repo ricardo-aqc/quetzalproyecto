@@ -46,25 +46,25 @@
                         <div class="col-6">
                             <div class="card-body">
                                 <center>
-                                    <form id=emailForm >
+                                    <form id=emailForm action="EnviarCorreo.php" method="POST">
                                         <div class="">
                                             <label class="form-label">Nombre</label>
-                                            <input type="text" class="form-control" id="Nombre" placeholder="Jose Martinez" required>
+                                            <input type="text" name="nombreContacto" class="form-control" id="Nombre" placeholder="Jose Martinez" required>
                                         </div>
 
                                         <div class="">
                                             <label class="form-label">Telefono</label>
-                                            <input type="text" class="form-control" id="Telefono" placeholder="8116168282" required>
+                                            <input type="text" name="telefonoContacto" class="form-control" id="Telefono" placeholder="8116168282" required>
                                         </div>
 
                                         <div class="">
                                             <label class="form-label">Correo</label>
-                                            <input type="email" class="form-control" id="Correo" placeholder="ejemplo2@gmail.com" required>
+                                            <input type="email" name="correoContacto" class="form-control" id="Correo" placeholder="ejemplo2@gmail.com" required>
                                         </div>
 
                                         <div class="">
                                             <label class="form-label">Descripcion</label>
-                                            <textarea type="text" class="form-control" id="Descripcion" rows="4"></textarea>
+                                            <textarea type="text" name="descripcionContacto" class="form-control" id="Descripcion" rows="4"></textarea>
                                         </div>
 
                                         <br>
@@ -148,7 +148,6 @@
 <script>
     
     var form = document.getElementById('emailForm');
-
     let Name = document.getElementById('Nombre');
     let Phone = document.getElementById('Telefono');
     let Email = document.getElementById('Correo');
@@ -157,30 +156,36 @@
     function envio(){
         if (form.checkValidity()) {
             <?php 
-            /*
-                // Esto es para activar la visualización de errores en el servidor, por si los hubiese
-                error_reporting(-1);
-                ini_set('display_errors', 'On');
-                set_error_handler("var_dump");
+            /*// Esto es para activar la visualización de errores en el servidor, por si los hubiese
+            error_reporting(-1);
+            ini_set('display_errors', 'On');
+            set_error_handler("var_dump");
 
-                $subject = $_POST['subject'];// El valor entre corchetes son los atributos name del formulario html
-                $msg = $_POST['msg'];
-                $from = $_POST['from'];
+            $nombre = $_POST['nombreContacto'];// El valor entre corchetes son los atributos name del formulario html
+            $telefono = $_POST['telefonoContacto'];
+            $correo = $_POST['correoContacto'];
+            $descripcion=$_POST['descripcionContacto'];
 
-                // El from DEBE corresponder a una cuenta de correo real creada en el servidor
-                $headers = "From: pablomonteserin@pablomonteserin.com\r\n"; 
-                $headers .= "Reply-To: $from\r\n";
-                $headers .= "MIME-Version: 1.0\r\n";
-                $headers .= "Content-Type: text/html; charset=utf-8\r\n"; 
+            // El from DEBE corresponder a una cuenta de correo real creada en el servidor
+            $mensaje = "$nombre\r\n$telefono\r\n$correo\r\n$descripcion";
+
+            // Si cualquier línea es más larga de 70 caracteres, se debería usar wordwrap()
+            $mensaje = wordwrap($mensaje, 70, "\r\n");
+
+            // Enviarlo
+            mail($correo, 'Contacto para Quetzal', $mensaje);
+            $headers = "From: pablomonteserin@pablomonteserin.com\r\n"; 
+            $headers .= "Reply-To: $from\r\n";
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=utf-8\r\n";
                     
-                if(mail($from, $subject, $msg)){
-                    echo "mail enviado";
-                    }else{
-                    $errorMessage = error_get_last()['msg'];
-                    echo $errorMessage;
+            if(mail($from, $subject, $msg)){
+                echo "mail enviado";
+                }else{
+                $errorMessage = error_get_last()['msg'];
+                echo $errorMessage;
                 }
-                */
-                
+                */              
             ?>
             alert("Correo enviado!")
         }

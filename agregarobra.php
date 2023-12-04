@@ -41,7 +41,7 @@
             </div>
 
             <div class="col-auto col-md-10 ms-auto min-vh-100">
-                <form name="form1" method="GET" class="row align-items-center mt-1 ms-1 me-1" action="CreateObra.php">
+                <form name="form1" action="CreateObra.php" method="POST" enctype="multipart/form-data" class="row align-items-center mt-1 ms-1 me-1">
                     <div class="mb-3 text-center">
                         <h4>
                             Agregar
@@ -85,7 +85,7 @@
                         <div class="input-group mb-3">
                             <label class="input-group-text col-auto col-form-label" for="imageInput">Escoger
                                 imagen</label>
-                            <input type="file" class="form-control" id="imageInput" multiple required name="imageInput"
+                            <input type="file" name="imageInput" class="form-control" id="imageInput" multiple required
                                 accept=".jpg, .jpeg, .png" />
                         </div>
                     </div>
@@ -95,7 +95,7 @@
                     </div>
                     <div class="row">
                         <div class="d-grid gap-2 col-6 mx-auto">
-                            <input name="" id="" class="btn text-white" type="submit" value="Agregar"
+                            <input type="submit" name="validar" id="" class="btn text-white" value="Agregar"
                                 style="background-color: #94b27e" />
                         </div>
                     </div>
