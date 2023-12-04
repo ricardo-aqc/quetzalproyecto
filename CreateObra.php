@@ -13,8 +13,13 @@ if ($conexion->query($sql) === TRUE) {
 	echo "Error: " . $sql . "<br>" . $conexion->error;
 }*/
 
+<<<<<<< Updated upstream
 $status="error";
 /*(if(!empty($_FILES["imageInput"]["name"])) {
+=======
+/*$status="error";
+if(!empty($_FILES["imageInput"]["name"])) {
+>>>>>>> Stashed changes
 	var_dump($_FILES);
 
 	$fileName = basename($_FILES["imageInput"]["name"]);
@@ -36,7 +41,13 @@ $status="error";
 
 // Assume $filename is the path to the file you want to convert to Blob
 $image = $_GET["imageInput"];
+<<<<<<< Updated upstream
 $filename = "C:/xampp/htdocs/Php/quetzalproyecto/img/$image";
+=======
+$image1 = implode(" ",$image);
+echo $image1;
+$filename = "C:/xampp/htdocs/Php/quetzalproyecto/img/$image1";
+>>>>>>> Stashed changes
 // Check if the file exists
 if (file_exists($filename)) {
     // Read the file content
