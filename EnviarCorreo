@@ -1,0 +1,21 @@
+<?php
+$from = "smtp.gamil.com";
+$to = $_POST['correoContacto'];
+
+$subject = "Contacto para Quetzal";
+$message = "Esto es una prueba";
+
+$nombre = $_POST['nombreContacto'];
+$telefono = $_POST['telefonoContacto'];
+$descripcion=$_POST['descripcionContacto'];
+
+$headers = "From: " . $from . "\r\n" . "Nombre: " . $nombre . "\r\n" . "Telefono: " . $telefono . "\r\n" . "Descripcion: " . $descripcion . "\r\n";
+
+$mail_sent = mail($to,$subject,$message,$headers);
+
+if ($mail_sent == true) {
+    echo "El mensaje de correo electrónico fue enviado con éxito.";
+} else {
+    echo "Hubo un problema al enviar el correo electrónico. Verifica los errores.";
+}
+?>

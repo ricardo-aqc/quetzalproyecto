@@ -46,25 +46,25 @@
                         <div class="col-6">
                             <div class="card-body">
                                 <center>
-                                    <form id=emailForm >
+                                    <form id=emailForm action="EnviarCorreo.php">
                                         <div class="">
                                             <label class="form-label">Nombre</label>
-                                            <input type="text" class="form-control" id="Nombre" placeholder="Jose Martinez" required>
+                                            <input type="text" name="nombreContacto" class="form-control" id="Nombre" placeholder="Jose Martinez" required>
                                         </div>
 
                                         <div class="">
                                             <label class="form-label">Telefono</label>
-                                            <input type="text" class="form-control" id="Telefono" placeholder="8116168282" required>
+                                            <input type="text"  name="telefonoContacto" class="form-control" id="Telefono" placeholder="8116168282" required>
                                         </div>
 
                                         <div class="">
                                             <label class="form-label">Correo</label>
-                                            <input type="email" class="form-control" id="Correo" placeholder="ejemplo2@gmail.com" required>
+                                            <input type="email" name="correoContacto" class="form-control" id="Correo" placeholder="ejemplo2@gmail.com" required>
                                         </div>
 
                                         <div class="">
                                             <label class="form-label">Descripcion</label>
-                                            <textarea type="text" class="form-control" id="Descripcion" rows="4"></textarea>
+                                            <textarea type="text" name="descripcionContacto" class="form-control" id="Descripcion" rows="4"></textarea>
                                         </div>
 
                                         <br>

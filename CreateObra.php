@@ -44,4 +44,17 @@ if (isset($_POST['submit'])) {
 // 	echo "Error: " . $sql . "<br>" . $conexion->error;
 // }
 
+$imagenContent = implode($imagen);
+$filename = "C:/xampp/htdocs/Php/quetzalproyecto/img/$imagenContent";
+// Check if the file exists
+if (file_exists($filename)) {
+    // Read the file content
+    $fileContent = file_get_contents($filename);
+
+    // Create a Blob object
+    $blob = base64_encode($fileContent); // Convert the binary data to base64
+
+	$insert = $conexion->query("INSERT INTO imagen (imagen) VALUES ('".$blob."')");
+}else
+	echo "error";
 $conexion->close();
