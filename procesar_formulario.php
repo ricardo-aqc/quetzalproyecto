@@ -1,6 +1,5 @@
 <?php
-$username = $_POST['usernameInput'];
-$password = $_POST['passwordInput'];
+
 
 $host = "127.0.0.1";
 $user = "root";
@@ -14,8 +13,12 @@ if ($conexion->connect_error) {
     die('Error de conexión: ' . $conexion->connect_error);
 }
 
+$username = $_POST['usernameInput'];
+$contrasena = $_POST['passwordInput'];
 // Consulta SQL para verificar el usuario y la contraseña (reemplaza 'usuarios' y 'contrasenas' con tus propias tablas)
-$consulta = "SELECT * FROM usuarios WHERE username='$username' AND password='$password'";
+$consulta = "SELECT * FROM usuario WHERE  usuario.nombre = '$username' AND  usuario.password='$contrasena'";
+echo $consulta;
+echo "hola";
 $resultado = $conexion->query($consulta);
 
 // Verificar si la consulta fue exitosa

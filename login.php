@@ -24,7 +24,8 @@
                     </div>
 
                     <div class="input-field">
-                        <input type="text" class="input" placeholder="Username" name="usernameInput" required>
+                        <input type="text" class="input" placeholder="Username" name="usernameInput" id="usernameInput"
+                            required>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-person" viewBox="0 0 16 16">
                             <path
@@ -32,7 +33,8 @@
                         </svg>
                     </div>
                     <div class="input-field">
-                        <input type="Password" class="input" placeholder="Password" name="passwordInput" required>
+                        <input type="password" class="input" placeholder="Password" name="passwordInput"
+                            id="passwordInput" required>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-lock" viewBox="0 0 16 16">
                             <path
@@ -40,7 +42,7 @@
                         </svg>
                     </div>
                     <div class="input-field">
-                        <input type="Submit" class="submit" value="Login">
+                        <input type="submit" class="submit" value="Login">
                     </div>
                     <div class="bottom">
                         <div class="left">
