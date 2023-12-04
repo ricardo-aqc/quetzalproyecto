@@ -63,15 +63,24 @@ $row = $result->fetch_array();
                     <div class="card" style="max-width: auto; ">
                         <div class="row g-0">
                             <div class="col">
-                                <img src="img\bodegasinfo.jpg" class="cardImage" alt="">
+                                <?php
+                                    $id=1;
+                                    $sql = "SELECT * FROM obra_imagen INNER JOIN imagen ON obra_imagen.imagen_id=imagen.imagen_id WHERE imagen.imagen_id=?";
+                                    $stmt = $conexion->prepare($sql);
+                                    $stmt->bind_param('s', $id);
+                                    $stmt->execute();
+                                    $result = $stmt->get_result();
+                                    while ($rows = $result->fetch_array()){
+                                        echo '<img src="data:image/jpeg;base64,' . base64_encode($rows['imagen']) . '" class="cardImage" />'; 
+                                    }
+                                ?>
                             </div>
                             <div class="col">
                                 <div class="card-body">
                                     <center>
                                         <p>
-                                            <?php $desc = nl2br($row["descripcion"]); echo $desc ?>
+                                            <?php $desc = nl2br($row["descripcion"]); echo $desc?>
                                         </p>
-
                                     </center>
                                 </div>
                             </div>
@@ -102,8 +111,10 @@ $row = $result->fetch_array();
                                     <center>
                                         <h5 class="card-title">Casas</h5>
                                         <p class="card-text"> Construimos casas para tu mejor comodidad</p>
-                                        <p class="card-text"><button type="button" class="btn btn-primary">Mas
+                                        <a href="Obras.php">
+                                            <p class="card-text"><button type="button" class="btn btn-primary">Mas
                                                 informacion</button></p>
+                                        </a>
                                     </center>
                                 </div>
                             </div>
@@ -122,8 +133,10 @@ $row = $result->fetch_array();
                                     <center>
                                         <h5 class="card-title">Remodelaciones</h5>
                                         <p class="card-text"> Hacemos remodelaciones en el momento que lo necesite</p>
-                                        <p class="card-text"><button type="button" class="btn btn-primary">Mas
+                                        <a href="Obras.php">
+                                            <p class="card-text"><button type="button" class="btn btn-primary">Mas
                                                 informacion</button></p>
+                                        </a>
                                     </center>
                                 </div>
                             </div>
