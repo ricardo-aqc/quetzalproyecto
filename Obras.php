@@ -39,6 +39,7 @@ require_once('config.php');
 
         <div class="contain">
             <div class="row">
+
                 <?php
                 for ($id = 1; $id <= 2; $id++) {
                     $sql = "SELECT * FROM obra_imagen INNER JOIN imagen ON obra_imagen.imagen_id=imagen.imagen_id WHERE imagen.imagen_id=?";
@@ -53,7 +54,9 @@ require_once('config.php');
                                 <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($row['imagen']) . '" class="card-img-top" />'; ?>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title" style="font-size:x-large"></h5>
+                                <a href="ObraInfo.php">
+                                    <h5 class="card-title d-flex justify-content-center" style="font-size:x-large"> Opcion 1</h5>
+                                </a>
                                 <p class="card-text" style="text-decoration:underline"></p>
                             </div>
                         </div>
@@ -107,7 +110,9 @@ require_once('config.php');
                     <div class="card">
                         <img src="img\Obra4.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title" style="font-size:x-large"></h5>
+                            <a href="ObraInfo.php">
+                                <h5 class="card-title d-flex justify-content-center" style="font-size:x-large"> Opcion 1</h5>
+                            </a>
                             <p class="card-text" style="text-decoration:underline"></p>
                         </div>
                     </div>
@@ -116,7 +121,9 @@ require_once('config.php');
                     <div class="card">
                         <img src="img\Obra5.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title" style="font-size:x-large"></h5>
+                            <a href="ObraInfo.php">
+                                <h5 class="card-title d-flex justify-content-center" style="font-size:x-large"> Opcion 1</h5>
+                            </a>
                             <p class="card-text" style="text-decoration:underline"></p>
                         </div>
                     </div>
@@ -125,7 +132,9 @@ require_once('config.php');
                     <div class="card">
                         <img src="img\Obra6.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title" style="font-size:x-large"></h5>
+                            <a href="ObraInfo.php">
+                                <h5 class="card-title d-flex justify-content-center" style="font-size:x-large"> Opcion 1</h5>
+                            </a>
                             <p class="card-text" style="text-decoration:underline"></p>
                         </div>
                     </div>
